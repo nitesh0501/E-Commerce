@@ -1,0 +1,37 @@
+<h1>Welcome to Periyar Stores</h1>
+
+<form #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm)" >
+    <label for="firstname">First Name</label>
+    <br>
+    <input type="text" name="fName" placeholder="Enter your First Name" [(ngModel)]="signUpDetails.fName" required minlength="3">
+      <div *ngIf="signUpForm.controls['fName']?.invalid && signUpForm.controls['fName']?.touched">
+          <div *ngIf="signUpForm.controls['fName']?.errors?.['required']">Add your first name</div>
+          <div *ngIf="signUpForm.controls['fName']?.errors?.['minlength']">Minimum 3 characters needed</div>
+      </div>
+    <br>
+    <label for="lastname">Last Name</label>
+    <br>
+    <input type="text" name="lName" placeholder="Enter your Last Name" [(ngModel)]="signUpDetails.lName" required minlength="3">
+     <div *ngIf="signUpForm.controls['lName']?.invalid && signUpForm.controls['lName']?.touched">
+          <div *ngIf="signUpForm.controls['lName']?.errors?.['required']">Add your first name</div>
+          <div *ngIf="signUpForm.controls['lName']?.errors?.['minlength']">Minimum 3 characters needed</div>
+      </div>
+    <br>
+    <label for="email">Email-id</label>
+    <br>
+    <input type="email" name="email" placeholder="Enter your email" [(ngModel)]="signUpDetails.email" required minlength="3">
+     <div *ngIf="signUpForm.controls['email']?.invalid && signUpForm.controls['email']?.touched">
+          <div *ngIf="signUpForm.controls['email']?.errors?.['required']">Add your first name</div>
+          <div *ngIf="signUpForm.controls['email']?.errors?.['minlength']">Minimum 3 characters needed</div>
+      </div>
+    <br>
+    <label for="passowrd">Password</label>
+    <br>
+    <input type="password" name="password" placeholder="Enter your passowrd" [(ngModel)]="signUpDetails.password" required pattern="^(?=.*[A-Za-z])(?=.*[!@#$%^&*])(?=.*\d).{8,15}$">
+     <div *ngIf="signUpForm.controls['passwprd']?.invalid && signUpForm.controls['password']?.touched">
+          <div *ngIf="signUpForm.controls['password']?.errors?.['required']">Add your first name</div>
+          <div *ngIf="signUpForm.controls['password']?.errors?.['pattern']">Use Minimum 1 Uppercase & 1 Number & 1 special character</div>
+      </div>
+    <br><br>
+    <button type="submit">Submit</button>
+</form>
