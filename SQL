@@ -1,0 +1,155 @@
+use  springjdbc;
+show tables;
+select * from Erode;
+drop table Erode;
+create database Project;
+use  project
+create table user(
+  id int auto_increment primary key,
+  fname varchar(20),
+  lname varchar(20),
+  emailId varchar(20) unique,
+  password varchar(20)
+);
+drop table user;
+select * from user;
+
+
+CREATE TABLE products (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    description TEXT,
+    price DECIMAL(10,2),
+    quantity INT,
+    category VARCHAR(50),
+    image VARCHAR(100)
+);
+
+INSERT INTO products (name, description, price, quantity, category, image)
+VALUES 
+('Tshirt',
+ 'Material: 100% Cotton, Cotton-Poly Blend, Combed Cotton, Polyester/Spandex. Fit: Classic, Slim Fit, Relaxed, Oversized. Neckline: Crew Neck, V-Neck, Scoop Neck.',
+ 550.25,
+ 1,
+ 'tshirt',
+ 'White-tshirt women.jpg'
+),
+('Simpletshirt',
+ 'Material: 100% cotton, Cotton-Poly Blend, Combed Cotton, Fit: Classic',
+ 1000.12,
+ 1,
+ 'tshirt',
+ 'Simpletshirt.jpg'
+),
+('Outcast',
+ 'Material: 100% cotton, Cotton-Poly Blend, Combed Cotton, Fit: Classic',
+ 888.50,
+ 1,
+ 'tshirt',
+ 'Outcast.jpg'
+),
+('Grouptshirt',
+ 'Coloured tshirts cotton made, made in Erode',
+ 1000.12,
+ 1,
+ 'tshirt',
+ 'Grouptshirt.jpg'
+),
+('Colouredtshirt',
+ 'Colored shirts made in 100% cotton fabric',
+ 1000.25,
+ 1,
+ 'tshirt',
+ 'colouredtshirt.jpg');
+ 
+ select * from products;
+ 
+ use bluescope;
+ show tables;
+ create table user(
+ id int auto_increment primary key,
+ fName varchar(20),
+ lName varchar(20),
+ email varchar(20) unique,
+ password varchar(20)
+ );
+ drop table user;
+ select * from user;
+ 
+ CREATE TABLE products (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    description TEXT,
+    price DECIMAL(10,2),
+    quantity INT,
+    category VARCHAR(50),
+    image VARCHAR(100)
+);
+ 
+ INSERT INTO products (name, description, price, quantity, category, image)
+VALUES 
+('Tshirt',
+ 'Material: 100% Cotton, Cotton-Poly Blend, Combed Cotton, Polyester/Spandex. Fit: Classic, Slim Fit, Relaxed, Oversized. Neckline: Crew Neck, V-Neck, Scoop Neck.',
+ 550.25,
+ 1,
+ 'tshirt',
+ 'White-tshirt women.jpg'
+),
+
+('Outcast',
+ 'Material: 100% cotton, Cotton-Poly Blend, Combed Cotton, Fit: Classic',
+ 888.50,
+ 1,
+ 'tshirt',
+ 'Outcast.jpg'
+),
+('Grouptshirt',
+ 'Coloured tshirts cotton made, made in Erode',
+ 1000.12,
+ 1,
+ 'tshirt',
+ 'Grouptshirt.jpg'
+),
+('Colouredtshirt',
+ 'Colored shirts made in 100% cotton fabric',
+ 1000.25,
+ 1,
+ 'tshirt',
+ 'colouredtshirt.jpg');
+ 
+ select * from products;
+ 
+ create table cart(
+   id int auto_increment primary key,
+   userId int not null,
+   productIdd int not null,
+   
+ )
+ 
+ CREATE TABLE cart (
+    id int auto_increment primary key,
+
+    user_id int,
+    product_id bigint,
+
+    quantity INT DEFAULT 1,
+
+    FOREIGN KEY (user_id) 
+        REFERENCES user(id) 
+        ON DELETE CASCADE,
+
+    FOREIGN KEY (product_id) 
+        REFERENCES products(id) 
+        ON DELETE CASCADE
+);
+create table user(
+  id int auto_increment primary key,
+  fname varchar(20),
+  lname varchar(20),
+  emailId varchar(20) unique,
+  password varchar(20)
+);
+
+
+ 
+ 
